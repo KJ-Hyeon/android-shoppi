@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- API버전 31이상에서 참조하는 values 폴더 하위에 themes을 추가하여 style 재정의  -->
+<resources>
+    <style name="Theme.Androidshoppi.Splash">
+        <item name="android:windowSplashScreenBackground">@color/shoppi_white</item>
+    </style>
+</resources>
