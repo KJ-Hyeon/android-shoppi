@@ -1,16 +1,15 @@
 package com.jeong.android.android_shoppi
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.gson.Gson
 import org.json.JSONObject
 
 class HomeFragment : Fragment() {
@@ -28,32 +27,27 @@ class HomeFragment : Fragment() {
 
         val toolbarTitle = view.findViewById<TextView>(R.id.toolbar_home_title)
         val toolbarIcon = view.findViewById<ImageView>(R.id.toolbar_home_icon)
+        val viewpager = view.findViewById<ViewPager2>(R.id.viewpage_home_banner)
+        val viewpagerIndicator = view.findViewById<TabLayout>(R.id.viewpager_home_banner_indicator)
 
         val assetLoader = AssetLoader()
-        val homeData = assetLoader.getJsonString(requireContext(), "home.json")
+        val homeJsonString = assetLoader.getJsonString(requireContext(), "home.json")
 
         //homeData -> JsonObject
-        if (!homeData.isNullOrEmpty()) {
-            // JsonObject 객체로 변환
-            val jsonObject = JSONObject(homeData)
-            val title = jsonObject.getJSONObject("title")
-            val text = title.getString("text")
-            val iconUrl = title.getString("icon_url")
-//            val titleValue = Title(text, iconUrl)
-            toolbarTitle.text = text
-            toolbarIcon.setImageResource(R.drawable.img_logo_home)
-            // Glide를 이용해서 해당 Url 이미지로드하면 Error 발생
-//            GlideApp.with(this)
-//                .load(iconUrl)
-//                .into(toolbarIcon)
+        if (!homeJsonString.isNullOrEmpty()) {
+            val gson = Gson()
+            val homeData = gson.fromJson(homeJsonString, HomeData::class.java)
 
-            // JsonArray 객체로 변환
-            val topBanners = jsonObject.getJSONArray("top_banners")
-            val firstBanner = topBanners.getJSONObject(0)
-            val label = firstBanner.getString("label")
-            val productDetail = firstBanner.getJSONObject("product_detail")
-            val price = productDetail.getInt("price")
+            toolbarTitle.text = homeData.title.text
+//            toolbarIcon.setImageResource(R.drawable.img_logo_home)
+            // Glide를 이용해서 해당 Url 이미지로드하면 에러 발생 (실제기기에서만 에러 발생)
+            GlideApp.with(this)
+                .load(homeData.title.iconUrl)
+                .into(toolbarIcon)
 
+            viewpager.adapter = HomeBannerAdapter().apply {
+                submitList(homeData.topBanners)
+            }
         }
     }
 }
