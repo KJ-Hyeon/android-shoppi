@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background_splash_screen.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/background_white.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/ic_gnb_back.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_tabbar_home_off.xml" value="0.1155" />
         <entry key="app/src/main/res/drawable/ic_tabbar_home_on.xml" value="0.1155" />
@@ -16,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_category.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.24954710144927536" />
+        <entry key="app/src/main/res/layout/item_home_banner.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.28125" />
       </map>
     </option>
