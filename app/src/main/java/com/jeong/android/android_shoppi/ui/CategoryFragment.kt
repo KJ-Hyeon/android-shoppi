@@ -1,10 +1,11 @@
-package com.jeong.android.android_shoppi
+package com.jeong.android.android_shoppi.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.jeong.android.android_shoppi.R
 
 class CategoryFragment: Fragment() {
     override fun onCreateView(
