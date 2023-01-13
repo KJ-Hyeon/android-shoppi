@@ -84,12 +84,12 @@
         <item name="android:textColor">@color/shoppi_white</item>
     </style>
 
-    <style name="TextCaption2.Grey04">
-        <item name="android:textColor">@color/shoppi_grey_04</item>
-    </style>
-
     <style name="TextCaption2.White.Bold">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextCaption2.Grey04">
+        <item name="android:textColor">@color/shoppi_grey_04</item>
     </style>
 
     <style name="TextSubTitle2.Black02">
@@ -110,6 +110,11 @@
 
     <style name="TextSubTitle1.Bold">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- ImageView Style -->
+    <style name="Circle">
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>
