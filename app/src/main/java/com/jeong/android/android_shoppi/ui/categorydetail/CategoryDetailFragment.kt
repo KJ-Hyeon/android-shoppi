@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ConcatAdapter
 import com.jeong.android.android_shoppi.common.KEY_CATEGORY_ID
 import com.jeong.android.android_shoppi.common.KEY_CATEGORY_LABEL
 import com.jeong.android.android_shoppi.databinding.FragmentCategoryDetailBinding
@@ -27,8 +28,18 @@ class CategoryDetailFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        val categoryId = requireArguments().getString(KEY_CATEGORY_ID)
+        setToolbar()
+        setListAdapter()
+    }
+
+    private fun setToolbar() {
         val categoryLabel = requireArguments().getString(KEY_CATEGORY_LABEL)
         binding.toolbarCategoryDetail.title = categoryLabel
+    }
+
+    private fun setListAdapter() {
+        val titleAdapter = CategorySectionTitleAdapter()
+        val promotionAdapter = CategoryPromotionAdapter()
+        binding.rvCategoryDetail.adapter = ConcatAdapter(titleAdapter, promotionAdapter)
     }
 }

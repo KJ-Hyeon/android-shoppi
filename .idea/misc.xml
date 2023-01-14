@@ -24,7 +24,9 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.24954710144927536" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_category_promotion.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/item_home_banner.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_title.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.28125" />
       </map>
     </option>
