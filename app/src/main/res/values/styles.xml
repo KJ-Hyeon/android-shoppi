@@ -8,6 +8,18 @@
     <style name="TextHeadLine5.Black02.Bold">
         <item name="android:textStyle">bold</item>
     </style>
+    
+    <style name="TextHeadLine32">
+        <item name="android:textSize">32sp</item>
+    </style>
+    
+    <style name="TextHeadLine32.White">
+        <item name="android:textColor">@color/shoppi_white</item>
+    </style>
+
+    <style name="TextHeadLine32.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="TextMedium" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textColor">@color/shoppi_black_01</item>
@@ -119,6 +131,14 @@
     <!-- ImageView Style -->
     <style name="Circle">
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="radius_12">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="radius_8">
+        <item name="cornerSize">8dp</item>
     </style>
 
 </resources>
