@@ -14,3 +14,14 @@ fun loadImage(view : ImageView, imageUrl : String?) {
             .into(view)
     }
 }
+
+@BindingAdapter("circleImageUrl")
+fun loadCircleImage(view : ImageView, imageUrl : String?) {
+    // Glide를 이용해서 해당 Url 이미지로드하면 에러 발생 (실제기기에서만 에러 발생)
+    if (!imageUrl.isNullOrEmpty()) {
+        GlideApp.with(view)
+            .load(imageUrl)
+            .circleCrop()
+            .into(view)
+    }
+}

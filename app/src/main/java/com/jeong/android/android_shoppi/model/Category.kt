@@ -7,6 +7,6 @@ data class Category(
     val categoryId : String,
     val label : String,
     @SerializedName("thumbnail_image_url")
-    val thumbnailImage : String,
+    val thumbnailImageUrl : String,
     val updated : Boolean
 )

@@ -25,7 +25,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_category_thumbnail"
-            imageUrl="@{category.thumbnailImage}"
+            imageUrl="@{category.thumbnailImageUrl}"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
