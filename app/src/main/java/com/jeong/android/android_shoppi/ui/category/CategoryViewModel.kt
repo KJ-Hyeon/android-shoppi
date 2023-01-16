@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jeong.android.android_shoppi.model.Category
-import com.jeong.android.android_shoppi.repository.CategoryRepository
+import com.jeong.android.android_shoppi.repository.category.CategoryRepository
 import com.jeong.android.android_shoppi.ui.common.Event
 import kotlinx.coroutines.launch
 

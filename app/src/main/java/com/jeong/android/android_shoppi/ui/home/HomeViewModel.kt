@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jeong.android.android_shoppi.model.Banner
 import com.jeong.android.android_shoppi.model.Title
-import com.jeong.android.android_shoppi.repository.HomeRepository
+import com.jeong.android.android_shoppi.repository.home.HomeRepository
 
 // AAC의 ViewModel을 사용
 class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {

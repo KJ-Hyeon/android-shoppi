@@ -1,4 +1,4 @@
-package com.jeong.android.android_shoppi.repository
+package com.jeong.android.android_shoppi.repository.home
 
 import com.jeong.android.android_shoppi.model.HomeData
 
