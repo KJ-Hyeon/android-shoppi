@@ -4,18 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jeong.android.android_shoppi.*
 import com.jeong.android.android_shoppi.common.KEY_PRODUCT_ID
 import com.jeong.android.android_shoppi.databinding.FragmentHomeBinding
+import com.jeong.android.android_shoppi.ui.categorydetail.SectionTitleAdapter
 import com.jeong.android.android_shoppi.ui.common.EventObserver
 import com.jeong.android.android_shoppi.ui.common.ViewModelFactory
 
@@ -76,6 +73,10 @@ class HomeFragment : Fragment() {
         findNavController().navigate(R.id.action_home_to_product_detail, bundleOf(
             KEY_PRODUCT_ID to productId
         ))
+
+    }
+
+    private fun setListAdapter() {
 
     }
 }

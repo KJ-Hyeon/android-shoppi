@@ -19,4 +19,8 @@
     <color name="shoppi_bluegrey">#f2f4f6</color>
     <color name="shoppi_white">#ffffff</color>
     <color name="shoppi_brown">#967a6d</color>
+
+    <!-- alpha color -->
+    <color name="shoppi_white_alpha90">#E6ffffff</color>
+    <color name="shoppi_black01_alpha9">#17000000</color>
 </resources>

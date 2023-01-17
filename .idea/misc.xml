@@ -7,9 +7,11 @@
         <entry key="app/src/main/res/drawable/background_black_gradient.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/background_bluegrey_r20.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/background_circle_gradient.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/background_grdient_r24.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/background_purple_r24.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/background_splash_screen.xml" value="0.1175" />
         <entry key="app/src/main/res/drawable/background_white.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/background_white_alpha90.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/ic_gnb_back.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_tabbar_home_off.xml" value="0.1155" />
         <entry key="app/src/main/res/drawable/ic_tabbar_home_on.xml" value="0.1155" />
@@ -25,12 +27,13 @@
         <entry key="app/src/main/res/layout/fragment_category.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_category_detail.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.24954710144927536" />
+        <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.23554976097348979" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_category_promotion.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/item_category_top_selling.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/item_category_top_selling_section.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_home_banner.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_product_description.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/item_title.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.28125" />
       </map>

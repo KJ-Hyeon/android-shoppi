@@ -9,7 +9,7 @@ import com.jeong.android.android_shoppi.databinding.ItemTitleBinding
 import com.jeong.android.android_shoppi.model.Title
 
 
-class CategorySectionTitleAdapter: ListAdapter<Title, CategorySectionTitleAdapter.CategorySectionTitleViewHolder>(TitleDiffCallback()) {
+class SectionTitleAdapter: ListAdapter<Title, SectionTitleAdapter.CategorySectionTitleViewHolder>(TitleDiffCallback()) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

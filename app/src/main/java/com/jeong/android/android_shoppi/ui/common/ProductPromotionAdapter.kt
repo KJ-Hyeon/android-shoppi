@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jeong.android.android_shoppi.databinding.ItemCategoryPromotionBinding
 import com.jeong.android.android_shoppi.model.Product
 
-class CategoryPromotionAdapter: ListAdapter<Product, CategoryPromotionAdapter.CategoryPromotionViewHolder>(ProductDiffCallback()) {
+class ProductPromotionAdapter: ListAdapter<Product, ProductPromotionAdapter.CategoryPromotionViewHolder>(ProductDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryPromotionViewHolder {
         val binding = ItemCategoryPromotionBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
-import com.jeong.android.android_shoppi.common.KEY_CATEGORY_ID
 import com.jeong.android.android_shoppi.common.KEY_CATEGORY_LABEL
 import com.jeong.android.android_shoppi.databinding.FragmentCategoryDetailBinding
 import com.jeong.android.android_shoppi.ui.common.ViewModelFactory
@@ -42,8 +41,8 @@ class CategoryDetailFragment : Fragment() {
 
     private fun setListAdapter() {
         val topSellingSectionAdapter = CategoryTopSellingSectionAdapter()
-        val titleAdapter = CategorySectionTitleAdapter()
-        val promotionAdapter = CategoryPromotionAdapter()
+        val titleAdapter = SectionTitleAdapter()
+        val promotionAdapter = ProductPromotionAdapter()
         binding.rvCategoryDetail.adapter = ConcatAdapter(topSellingSectionAdapter, titleAdapter, promotionAdapter)
         viewModel.topSelling.observe(viewLifecycleOwner) {
             topSellingSectionAdapter.submitList(listOf(it))
