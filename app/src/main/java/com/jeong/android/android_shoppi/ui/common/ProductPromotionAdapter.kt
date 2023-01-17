@@ -7,22 +7,24 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jeong.android.android_shoppi.databinding.ItemCategoryPromotionBinding
 import com.jeong.android.android_shoppi.model.Product
+import com.jeong.android.android_shoppi.ui.common.ProductClickListener
 
-class ProductPromotionAdapter: ListAdapter<Product, ProductPromotionAdapter.CategoryPromotionViewHolder>(ProductDiffCallback()) {
+class ProductPromotionAdapter(private val clickListener : ProductClickListener): ListAdapter<Product, ProductPromotionAdapter.PromotionViewHolder>(ProductDiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryPromotionViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PromotionViewHolder {
         val binding = ItemCategoryPromotionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CategoryPromotionViewHolder(binding)
+        return PromotionViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CategoryPromotionViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PromotionViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class CategoryPromotionViewHolder(private val binding: ItemCategoryPromotionBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class PromotionViewHolder(private val binding: ItemCategoryPromotionBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product : Product) {
             binding.product = product
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }

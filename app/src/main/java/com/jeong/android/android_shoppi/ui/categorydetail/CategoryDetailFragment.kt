@@ -9,9 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import com.jeong.android.android_shoppi.common.KEY_CATEGORY_LABEL
 import com.jeong.android.android_shoppi.databinding.FragmentCategoryDetailBinding
+import com.jeong.android.android_shoppi.ui.common.ProductClickListener
 import com.jeong.android.android_shoppi.ui.common.ViewModelFactory
 
-class CategoryDetailFragment : Fragment() {
+class CategoryDetailFragment : Fragment(), ProductClickListener {
 
     private lateinit var binding: FragmentCategoryDetailBinding
     private val viewModel : CategoryDetailViewModel by viewModels { ViewModelFactory(requireContext()) }
@@ -34,6 +35,10 @@ class CategoryDetailFragment : Fragment() {
         setListAdapter()
     }
 
+    override fun onProductClick(productId: String) {
+        // TODO ProductDetailFragment 이동 구현
+    }
+
     private fun setToolbar() {
         val categoryLabel = requireArguments().getString(KEY_CATEGORY_LABEL)
         binding.toolbarCategoryDetail.title = categoryLabel
@@ -42,7 +47,7 @@ class CategoryDetailFragment : Fragment() {
     private fun setListAdapter() {
         val topSellingSectionAdapter = CategoryTopSellingSectionAdapter()
         val titleAdapter = SectionTitleAdapter()
-        val promotionAdapter = ProductPromotionAdapter()
+        val promotionAdapter = ProductPromotionAdapter(this)
         binding.rvCategoryDetail.adapter = ConcatAdapter(topSellingSectionAdapter, titleAdapter, promotionAdapter)
         viewModel.topSelling.observe(viewLifecycleOwner) {
             topSellingSectionAdapter.submitList(listOf(it))

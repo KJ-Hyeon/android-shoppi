@@ -1,6 +1,7 @@
 package com.jeong.android.android_shoppi.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,15 +9,18 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ConcatAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jeong.android.android_shoppi.*
 import com.jeong.android.android_shoppi.common.KEY_PRODUCT_ID
 import com.jeong.android.android_shoppi.databinding.FragmentHomeBinding
+import com.jeong.android.android_shoppi.ui.categorydetail.ProductPromotionAdapter
 import com.jeong.android.android_shoppi.ui.categorydetail.SectionTitleAdapter
 import com.jeong.android.android_shoppi.ui.common.EventObserver
+import com.jeong.android.android_shoppi.ui.common.ProductClickListener
 import com.jeong.android.android_shoppi.ui.common.ViewModelFactory
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), ProductClickListener {
 
     private val viewModel: HomeViewModel by viewModels { ViewModelFactory(requireContext()) }
     private lateinit var binding: FragmentHomeBinding
@@ -36,10 +40,17 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         setToolbar()
         setTopBanners()
+        setListAdapter()
         viewModel.openProductDetail.observe(viewLifecycleOwner, EventObserver {
             openProductDetail(it)
         })
+    }
 
+    // ProductClickListener
+    override fun onProductClick(productId: String) {
+        findNavController().navigate(R.id.action_home_to_product_detail, bundleOf(
+            KEY_PRODUCT_ID to "desk-1"
+        ))
     }
 
     private fun setToolbar() {
@@ -77,6 +88,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun setListAdapter() {
-
+        val titleAdapter = SectionTitleAdapter()
+        val promotionAdapter = ProductPromotionAdapter(this)
+        binding.rvHome.adapter = ConcatAdapter(titleAdapter, promotionAdapter)
+        viewModel.promotions.observe(viewLifecycleOwner) {
+            titleAdapter.submitList(listOf(it.title))
+            promotionAdapter.submitList(it.items)
+        }
     }
 }
