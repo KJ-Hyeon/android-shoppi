@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.jeong.android.android_shoppi.AssetLoader
 import com.jeong.android.android_shoppi.ServiceLocator
 import com.jeong.android.android_shoppi.network.ApiClient
+import com.jeong.android.android_shoppi.repository.cart.CartItemLocalDataSource
+import com.jeong.android.android_shoppi.repository.cart.CartRepository
 import com.jeong.android.android_shoppi.repository.category.CategoryRemoteDataSource
 import com.jeong.android.android_shoppi.repository.category.CategoryRepository
 import com.jeong.android.android_shoppi.repository.categorydetail.CategoryDetailRemoteDataSource
@@ -38,10 +40,10 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
             }
             modelClass.isAssignableFrom(ProductDetailViewModel::class.java) -> {
                 val repository = ProductDetailRepository(ProductDetailRemoteDataSource(ServiceLocator.provideApiClient()))
-                ProductDetailViewModel(repository) as T
+                ProductDetailViewModel(repository, ServiceLocator.provideCartRepository(context)) as T
             }
             modelClass.isAssignableFrom(CartViewModel::class.java) -> {
-                CartViewModel() as T
+                CartViewModel(ServiceLocator.provideCartRepository(context)) as T
             }
             else -> {
                 throw IllegalAccessException("Failed to create ViewModel ${modelClass.name}")

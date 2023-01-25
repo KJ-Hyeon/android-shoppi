@@ -8,6 +8,10 @@
         <variable
             name="product"
             type="com.jeong.android.android_shoppi.model.Product" />
+
+        <variable
+            name="viewModel"
+            type="com.jeong.android.android_shoppi.ui.productdetail.ProductDetailViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -153,7 +157,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_product_detail_image_title"
-                    tools:listitem="@layout/item_product_description"/>
+                    tools:listitem="@layout/item_product_description" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -194,6 +198,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="12dp"
                 android:background="@drawable/background_grdient_r24"
+                android:onClick="@{() -> viewModel.addCart(product)}"
                 android:text="장바구니 담기"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

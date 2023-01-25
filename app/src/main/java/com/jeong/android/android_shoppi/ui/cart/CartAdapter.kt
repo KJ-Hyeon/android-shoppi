@@ -1,5 +1,6 @@
 package com.jeong.android.android_shoppi.ui.cart
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -43,10 +44,6 @@ class CartAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    override fun getItemCount(): Int {
-        return cartProducts.size
-    }
-
     override fun getItemViewType(position: Int): Int {
         return when (cartProducts[position]) {
             is CartHeader -> VIEW_TYPE_HEADER
@@ -54,8 +51,11 @@ class CartAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
+    override fun getItemCount(): Int {
+        return cartProducts.size
+    }
+
     fun submitHeaderAndItemList(items: List<CartItem>) {
-        // brandName기준으로 Group
         val itemGroups = items.groupBy { it.brandName }
         val products = mutableListOf<CartProduct>()
         itemGroups.entries.forEach { entry ->
